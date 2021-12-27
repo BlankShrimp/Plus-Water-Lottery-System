@@ -25,6 +25,11 @@
       </div>
     </div>
     <b-sidebar id="results-display" title="中奖名单" shadow>
+      <b-card bg-variant="success" text-variant="light" header="剩余群友" class="text-center mt-2 ml-2 mr-2">
+        <b-row v-for="n in separateLine(candidates)" :key="n">
+          <b-col v-for="name in separateColumn(n, candidates)" :key="name">{{name}}</b-col>
+        </b-row>
+      </b-card>
       <b-card bg-variant="danger" text-variant="light" v-for="(archivedList, archivedPrize) in winner_archive" :key="archivedPrize" :header="archivedPrize" class="text-center mt-2 ml-2 mr-2">
         <b-row v-for="n in separateLine(archivedList)" :key="n">
           <b-col v-for="name in separateColumn(n, archivedList)" :key="name">{{name}}</b-col>
@@ -60,7 +65,7 @@
 }
 
 .b-sidebar {
-  width: 400px;
+  width: 470px;
 }
 
 #canvas {
@@ -83,10 +88,10 @@ export default {
       candidates: [
         '夜老师',
         'wxs',
-        'dsz',
+        '啾咪宝贝',
         '耶梦加得',
         '粥粥',
-        '葱哥',
+        '葱葱宝贝天使☺️',
         '茶几',
         '森井飞鸟',
         '阿姨',
@@ -152,7 +157,7 @@ export default {
         this.shoot = 0
         let tempList = []
         for (var name in this.winner_list) {
-          this.candidates.splice(this.candidates.indexOf(name), 1)
+          this.candidates.splice(this.candidates.indexOf(this.winner_list[name]), 1)
         }
         if (this.form.count > this.candidates.length) {
           this.form.count = this.candidates.length
