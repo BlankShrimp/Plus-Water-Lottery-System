@@ -1,6 +1,6 @@
-# project-a
+# Plus Water Lottery System
 
-> A Vue.js project
+> A wiggle lottery system written in Vue.js. 
 
 ## Build Setup
 
