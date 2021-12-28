@@ -12,7 +12,7 @@
           <b-form-input id="prize" placeholder="奖品" class="mb-2 mr-sm-2 mb-sm-0" v-model="form.prize"></b-form-input>
           <label class="sr-only" for="number">人数</label>
           <b-form-spinbutton prepend="x" id="number" :formatter-fn="dayFormatter" class="mb-2 mr-sm-2 mb-sm-0" vertical v-model="form.count" :max="candidates.length"></b-form-spinbutton>
-          <b-button id="execute" variant="danger" type="submit" class="mb-2 mr-sm-2 mb-sm-0">{{action_title}}</b-button>
+          <b-button id="execute" variant="danger" v-on:click='onSubmit' class="mb-2 mr-sm-2 mb-sm-0">{{action_title}}</b-button>
         </b-form>
       </div>
       <div id="name-list-box" class="mt-2">
